@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  api:
+    build: .
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=file:./dev.db
+      - JWT_SECRET=your-super-secret-jwt-key
+      - PORT=4000
+    volumes:
+      - ./prisma/dev.db:/app/prisma/dev.db
+    depends_on:
+      - db
+    networks:
+      - worker-api-network
+
+  db:
+    image: sqlite3:latest
+    volumes:
+      - db-data:/app/prisma
+    networks:
+      - worker-api-network
+
+volumes:
+  db-data:
+
+networks:
+  worker-api-network:
+    driver: bridge

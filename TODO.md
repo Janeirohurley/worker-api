@@ -1,8 +1,9 @@
-# TODO: Add Swagger/OpenAPI Documentation to Worker API
+# TODO: Implement Deployment for Worker API
 
 ## Steps to Complete
-- [x] Install Swagger dependencies: swagger-jsdoc, swagger-ui-express, @types/swagger-jsdoc, @types/swagger-ui-express
-- [x] Create OpenAPI specification in src/server.ts or separate file
-- [x] Add JSDoc comments to controllers and routes for API documentation
-- [x] Integrate Swagger UI middleware in src/server.ts
-- [x] Test the documentation endpoint (/api-docs) without changing existing logic
+- [x] Create Dockerfile for containerization
+- [x] Create docker-compose.yml for local development with database
+- [x] Add Jenkinsfile for CI/CD pipeline
+- [x] Update package.json with production build script
+- [x] Create render.yaml for Render deployment
+- [x] Update .gitignore for deployment artifacts
